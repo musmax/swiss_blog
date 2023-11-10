@@ -6,13 +6,22 @@ const { roles } = require('../config/roles');
 
 const userSchema = mongoose.Schema(
   {
-    name: {
+    firstName: {
       type: String,
       required: true,
       trim: true,
     },
-    phone: {
-      type : String,
+    lastName: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    courseOfStudy: {
+      type: String,
+      trim: true,
+    },
+    phoneNumber: {
+      type: String,
       maxlength: 255,
     },
     email: {
@@ -27,10 +36,6 @@ const userSchema = mongoose.Schema(
         }
       },
     },
-    mediaIds: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Media',
-    }],
     password: {
       type: String,
       required: true,
